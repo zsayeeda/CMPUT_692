@@ -253,25 +253,10 @@ def removeWrongAnnotations(threshold, dataset, alpha, beta, gama):
 def runTests(dataset):
 
 	# Those ranges were defined empirically (by testing multiple options)
-	testThresholds = np.arange(0.05, 1.0, 0.05)
-	testAlphas = np.arange(0.1, 0.7, 0.05)
-	testBetas = np.arange(0.1, 0.7, 0.05)
-	testGamas = np.arange(0.7, 1.05, 0.05)
-	# testGamas = [1.0]
-
-	# # # By-pass range and test with a single value previously defined to speed up (commend when doing serious tests)
-	# 	# Best for hn
-	# testAlphas = [0.25] 
-	# testBetas = [0.45] 
-	# testGamas = [0.75] 
-
-		# Best for nyt
-	# Best alpha: 0.30000000000000004
-	# Best beta: 0.25000000000000006
-	# Best gama: 1.0
-	# Best threshold: 0.8000000000000002
-
-
+	testThresholds = np.arange(0.01, 0.95, 0.01)
+	testAlphas = np.arange(0.01, 0.95, 0.01)
+	testBetas = np.arange(0.01, 0.95, 0.01)
+	testGamas = np.arange(0.01, 0.95, 0.01)
 
 	auxListAverage = []
 	nAnnotations = 0
@@ -381,6 +366,7 @@ def runTests(dataset):
 #---------------------------------------------------------------------
 if __name__ == '__main__':
 
+	# Change if you want to used another dataset
 	datasetFileName = 'nyt-random_dbpedia_annotated_010_with_temporal_spatial_similaties.json'
 	
 	print ("Tests for file " + datasetFileName)
