@@ -50,6 +50,3 @@ The output file looks like this:
 9) Run the script 'addSpatialSimilaritiesToDataset.py'. For each document in the diaNED corpus that was annotated by dbpedia spotlight on step 7, this script will compute the spatial similarity between the document and each annotated entity. Before running the script, open it and update the variables 'pathForAnnotatedDatasetsWithTemporalSimilarities' (with the path to the files created on step 8) and 'pathForAnnotatedDatasetsWithTemporalAndLocationSimilarities' (where the output of this script will be saved).
 
 10) Use the script 'errorsDetectionDBpedia.py' to perform tests. This script will also generate a file 'goodExamples.txt' that contains examples of errors in dbpedia spotlight annotation that where correctly detected by our approach. Before running the script, open the file and update the variable 'pathForDBpediaAnnotatedDataset' with the path for the files created on step 9. 
-
-Other files in this folder: 
-- namedEntityRecognition.py: A class to perform entity named recognition using spacy. It is used by createLocationEmbeddings.py, getGeoReferencesFromDiaNED.py, and spatialEmbeddingspy
