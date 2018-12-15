@@ -96,30 +96,4 @@ def createTemporalEmbeddingForYear(year):
 def getCosineSimilarity(vecA, vecB):
 	return (1-spatial.distance.cosine(vecA, vecB))
 
-
-if __name__ == '__main__':
-
-	# Load all signatures: 
-	data = None
-	logger.info("Loading temporal signatures...")
-	with open(os.path.join(pathForTemporalSignatures, 'TempSig.pkl'), 'rb') as f:
-		data = pickle.load(f)
-	logger.info("Temporal signatures loaded.")
-
-	# # Test: Similarity between George_H._W._Bush and 1990
-	# similarity1 = getCosineSimilarity(retrieveTemporal(data, 'National_Guard_(France)'), createTemporalEmbeddingForYear(1790))
-	# print ("Similarity between George_H._W._Bush and 1990: " + str(similarity1))
-
-# 	# Test: Similarity between George_W._Bush and 1990
-# 	similarity2 = getCosineSimilarity(retrieveTemporal(data, 'George_W._Bush'), createTemporalEmbeddingForYear(1990))
-# 	print ("Similarity between George_W._Bush and 1990: " + str(similarity2))
-	
-	# Test: Similarity between George_W._Bush and 2001
-	similarity3 = getCosineSimilarity(retrieveTemporal(data, 'George_W._Bush'), createTemporalEmbeddingForYear(1995))
-	print ("Similarity between George_W._Bush and 2001: " + str(similarity3))
-
-	# Test: Similarity between George_H._W._Bush and 2001
-	similarity4 = getCosineSimilarity(retrieveTemporal(data, 'George_H._W._Bush'), createTemporalEmbeddingForYear(1995))
-	print ("Similarity between George_H._W._Bush and 2001: " + str(similarity4))
-
 	
